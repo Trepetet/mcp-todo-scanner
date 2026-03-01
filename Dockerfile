@@ -20,13 +20,13 @@ try:\n\
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\n\
     result = sock.connect_ex(("127.0.0.1", 8000))\n\
     if result == 0:\n\
-        print("✅ MCP server is running and port 8000 is open")\n\
+        print("+ MCP server is running and port 8000 is open")\n\
         sys.exit(0)\n\
     else:\n\
-        print(f"❌ Port 8000 is not open (error code: {result})")\n\
+        print(f"- Port 8000 is not open (error code: {result})")\n\
         sys.exit(1)\n\
 except Exception as e:\n\
-    print(f"❌ Cannot connect to MCP server: {e}")\n\
+    print(f"- Cannot connect to MCP server: {e}")\n\
     sys.exit(1)\n\
 ' > /usr/local/bin/smoke && chmod +x /usr/local/bin/smoke
 
